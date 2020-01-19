@@ -12,18 +12,18 @@ const Home = ({ posts }) => (
     </Head>
 
     <div className="hero">
-      <h1 className="hero-title">Selman Kahya</h1>
+      <h1 className="hero-title">Sinan ÖKSÜZ</h1>
       <div className="hero-social-links">
-        <Link href="https://medium.com/@selmankahya">
+        <Link href="https://medium.com/@h.sinanoksuz">
           <a className="social-link">Medium</a>
         </Link>
-        <Link href="https://www.twitter.com/selmankahyax">
+        <Link href="#">
           <a className="social-link">Twitter</a>
         </Link>
-        <Link href="https://www.linkedin.com/in/selmankahya">
+        <Link href="https://www.linkedin.com/in/sinan-ö-79435714b">
           <a className="social-link">LinkedIn</a>
         </Link>
-        <Link href="https://www.instagram.com/selmankahyax/?hl=en">
+        <Link href="#">
           <a className="social-link">Instagram</a>
         </Link>
       </div>
