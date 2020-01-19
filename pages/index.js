@@ -3,26 +3,33 @@ import fetch from "isomorphic-unfetch";
 import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-
+import globalStyles from "../src/styles/global.js"
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { lightBlue,} from "@material-ui/core/colors";
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
 const Home = ({ posts }) => (
   <div className="container">
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
+  
     </Head>
-
     <div className="hero">
       <h1 className="hero-title">Sinan ÖKSÜZ</h1>
       <div className="hero-social-links">
-        <Link href="https://medium.com/@h.sinanoksuz">
-          <a className="social-link">Medium</a>
+       <Link href="https://medium.com/@h.sinanoksuz">
+         <a className="social-link">Medium</a>
         </Link>
-        <Link href="#">
+        <TwitterIcon style={{color:lightBlue[500]}}/> 
+          <Link href="#">
           <a className="social-link">Twitter</a>
         </Link>
+        <LinkedInIcon style={{color:'#0e76a8'}}/>
         <Link href="https://www.linkedin.com/in/sinan-ö-79435714b">
           <a className="social-link">LinkedIn</a>
         </Link>
+        <InstagramIcon style={{color:'#405DE6'}}/>
         <Link href="#">
           <a className="social-link">Instagram</a>
         </Link>
@@ -31,49 +38,27 @@ const Home = ({ posts }) => (
 
     {posts.map(post => (
       <div className="blog">
+
         <h2 className="blog-title">
           <Link href={post.slug}>
             <a className="blog-title-link">{post.title}</a>
-          </Link>
+    </Link>
         </h2>
-        <div className="blog-text">
-          <ReactMarkdown source={post.details} />
-        </div>
+        <div className="blog-left">
         <div className="blog-date">{post.date}</div>
+         <div className="blog-subject"></div>
+        </div>
+        <div className="blog-text">
+       
+          <ReactMarkdown source={post.details} />
+          </div>
+         <Link href={post.slug}><button>Read More</button></Link>
+        
+        
       </div>
     ))}
 
-    <style jsx>{`
-      .container {
-        max-width: 650px;
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      .hero {
-        text-align: center;
-        margin: 96px 0;
-      }
-
-      .social-link {
-        margin-right: 8px;
-      }
-
-      .hero-title {
-        font-size: 48px;
-      }
-
-      .blog-date {
-        text-align: right;
-        color: #cccccc;
-        margin: 12px 0 48px 0;
-      }
-
-      a {
-        color: #35459e;
-        text-decoration: none;
-      }
-    `}</style>
+    <style jsx global>{globalStyles}</style>
   </div>
 );
 

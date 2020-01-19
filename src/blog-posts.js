@@ -2,21 +2,24 @@ export const getPosts = () => {
   return [
     {
       title: "1500TL ödül! Sen de yarışmaya katıl!",
+      subject:"konu konu konu",
       slug: "yarisma",
       details: require("./posts/yarisma.md").default,
-      date: "5 Aralık 2019"
+      date: "5 Oct 2019"
     },
     {
       title: "Örnek yazı",
+      subject:"konu konu konu",
       slug: "ornek-yazi",
       details: require("./posts/ornek-yazi.md").default,
-      date: "3 Aralık 2019"
+      date: "5 Oct 2019"
     },
     {
       title: "Merhaba dünya!",
+      subject:"konu konu konu",
       slug: "merhaba",
       details: require("./posts/merhaba.md").default,
-      date: "1 Aralık 2019"
+      date: "5 Oct 2019"
     }
   ];
 };
