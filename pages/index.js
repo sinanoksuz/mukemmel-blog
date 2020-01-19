@@ -9,6 +9,7 @@ import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 const Home = ({ posts }) => (
+  <body>
   <div className="container">
     <Head>
       <title>Home</title>
@@ -59,7 +60,7 @@ const Home = ({ posts }) => (
     ))}
 
     <style jsx global>{globalStyles}</style>
-  </div>
+  </div></body>
 );
 
 Home.getInitialProps = async ({ req }) => {

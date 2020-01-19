@@ -5,6 +5,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import globalStyles from '../src/styles/global.js';
 const BlogPost = ({ post }) => (
+ <body >
   <div className="container">
     <Head>
       <title>Home</title>
@@ -44,13 +45,14 @@ const BlogPost = ({ post }) => (
    <style jsx global>
    {globalStyles}
    </style>
-  </div>
+  </div></body>
 );
 
 BlogPost.getInitialProps = async ({ req, query }) => {
   // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
 //  http://mukemmel-blogg.herokuapp.com/
-  const res = await fetch(`http://localhost:3000/api/post/${query.postId}`);
+//http://localhost:3000
+  const res = await fetch(`http://mukemmel-blogg.herokuapp.com/api/post/${query.postId}`);
   const json = await res.json();
   return { post: json.post };
 };
