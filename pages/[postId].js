@@ -4,8 +4,13 @@ import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import globalStyles from '../src/styles/global.js';
+
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { lightBlue,} from "@material-ui/core/colors";
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
 const BlogPost = ({ post }) => (
- <body >
+ <body  >
   <div className="container">
     <Head>
       <title>Home</title>
@@ -13,22 +18,26 @@ const BlogPost = ({ post }) => (
     </Head>
 
     <div className="hero">
-    <h1 className="hero-title">Sinan ÖKSÜZ</h1>
-    <div className="hero-social-links">
-      <Link href="https://medium.com/@h.sinanoksuz">
-        <a className="social-link">Medium</a>
-      </Link>
-      <Link href="#">
-        <a className="social-link">Twitter</a>
-      </Link>
-      <Link href="https://www.linkedin.com/in/sinan-ö-79435714b">
-        <a className="social-link">LinkedIn</a>
-      </Link>
-      <Link href="#">
-        <a className="social-link">Instagram</a>
-      </Link>
+    <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
+      <h1 className="hero-title">Sinan ÖKSÜZ</h1>
+      <div className="hero-social-links">
+       <Link href="https://medium.com/@h.sinanoksuz">
+         <a className="social-link">Medium</a>
+        </Link>
+        <TwitterIcon style={{color:lightBlue[500]}}/> 
+          <Link href="#">
+          <a className="social-link">Twitter</a>
+        </Link>
+        <LinkedInIcon style={{color:'#0e76a8'}}/>
+        <Link href="https://www.linkedin.com/in/sinan-ö-79435714b">
+          <a className="social-link">LinkedIn</a>
+        </Link>
+        <InstagramIcon style={{color:'#405DE6'}}/>
+        <Link href="#">
+          <a className="social-link">Instagram</a>
+        </Link>
+      </div>
     </div>
-  </div>
 
     <div className="blog">
       <h2 className="blog-title">

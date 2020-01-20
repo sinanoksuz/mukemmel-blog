@@ -17,6 +17,7 @@ const Home = ({ posts }) => (
   
     </Head>
     <div className="hero">
+    <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
       <h1 className="hero-title">Sinan ÖKSÜZ</h1>
       <div className="hero-social-links">
        <Link href="https://medium.com/@h.sinanoksuz">
@@ -47,7 +48,8 @@ const Home = ({ posts }) => (
         </h2>
         <div className="blog-left">
         <div className="blog-date">{post.date}</div>
-         <div className="blog-subject"></div>
+        <br/>
+         <div className="blog-subject">{post.subject}</div>
         </div>
         <div className="blog-text">
        
