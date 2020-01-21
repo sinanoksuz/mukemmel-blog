@@ -1,22 +1,23 @@
 import css from 'styled-jsx/css'
 
 export default css.global`
+/*index.js */
 body{
-    background-image: linear-gradient(to top, #1abc9c 0%, #ecf0f1 100%) ; 
+     background-image:url('/bgimg.png');
     background-position: center;
     background-repeat: repeat-y;
     background-size: cover; 
-    width:100%;
     margin:0 auto;
     height:100%;
     
 }
+
 .container {
-    max-width: 700px;
+    max-width: 70%;
     width: 100%;
     background-color:rgba(236,240,241,0.4);
     margin: 0 auto;
-    color:gray;
+    color:#273c75;
     padding:50px;
     margin-bottom:50px;
     
@@ -47,26 +48,24 @@ body{
 
   .blog-left {
     text-align: center;
-    width:50px;
-    max-height:150px;
     float:left;
+    margin-left:5px;
     border-right:1px solid #7f8c8d;
     color: gray;
     display:block;
-    margin:0 ;
-
+    
 }
 
   a {
-    color: #2980b9;
+    color: #273c75;
     margin-left:10px;
     text-decoration: none;
   }
   .blog-text{
-    color:#8f8f8f;
-    width: 500px;  
+    color#273c75;
+    width: 60%;
+      
     max-height:150px;
-    margin-left:60px;
     padding:7px;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -75,14 +74,7 @@ body{
     border: 1px solid #636e72;
 
 } 
-.blog-text2{
-    color:#8f8f8f;
-    margin:20px;
-    padding:7px;
-    text-align:justify;
-    border-radius:10px;
-    border: 1px solid #636e72;
-}
+
 button{
     background-color:#1abc9c;
     display:inline-block;
@@ -96,7 +88,41 @@ button{
     color:white;
     border-radius:5px;
 }
-button:hover{
+button:hover
+{
     background-color:#16a085;
+  }
+  .img-cover{
+    float:left;
+    width:30%;
+    height:10%;
+    margin-bottom:38px;
+    
+  }
+//postid.js
+.blog-text2{
+  color:#8f8f8f;
+  margin:20px;
+  padding:7px;
+  text-align:justify;
+  border-radius:10px;
+  border: 1px solid #636e72;
 }
+@media only screen and (max-width:700px){
+.blog-sub button,.blog-left,.blog-text{
+display:none;
+}
+.blog-title a{
+  display:block;
+  position:static;
+  color:black;
+  border:1px solid red;
+}
+.img-cover{
+  width:100%;
+}
+}
+//comment and text area
+
+  
 `

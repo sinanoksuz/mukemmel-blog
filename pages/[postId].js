@@ -9,6 +9,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { TextareaAutosize } from "@material-ui/core";
 const BlogPost = ({ post }) => (
  <body  >
   <div className="container">
@@ -50,6 +51,21 @@ const BlogPost = ({ post }) => (
         <ReactMarkdown source={post.details} />
       </div>
       <div className="blog-date">{post.date}</div>
+     
+      <div className="blog-comment">
+
+      <br/><div>Name:</div>
+      <br/>
+      
+      <p className="comment"></p>
+      </div>
+      <div className="blog-textarea">
+
+      <br/><div>Name:</div>
+      <br/>
+      
+      <textarea className="textarea"></textarea>
+      </div>
     </div>
    <style jsx global>
    {globalStyles}
@@ -61,7 +77,7 @@ BlogPost.getInitialProps = async ({ req, query }) => {
   // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
 //  http://mukemmel-blogg.herokuapp.com/
 //http://localhost:3000
-  const res = await fetch(`http://mukemmel-blogg.herokuapp.com/api/post/${query.postId}`);
+  const res = await fetch(`http://localhost:3000/api/post/${query.postId}`);
   const json = await res.json();
   return { post: json.post };
 };
