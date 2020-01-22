@@ -143,12 +143,9 @@ display:none;
   margin 0 auto;
   text-align:center;
   padding:5px;
-  border-top:1px solid rgba(0,0,0,0.2);
-  
-  
+  border-top:1px solid rgba(0,0,0,0.2);  
 }
 .img-cover{
-  
   width:100%;
 }
 .blog-date{
