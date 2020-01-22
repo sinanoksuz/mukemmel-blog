@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 export default css.global`
 /*index.js */
 body{  
-  background-image: linear-gradient(135deg,rgba(72,319,251,0.6),rgba(52,31,151,0.6));
+  background-image: linear-gradient(335deg,rgba(236,240,241,0.6),rgba(26,188,156,0.6));
     background-position: center;
     background-repeat: repeat-y;
     background-size: cover; 
@@ -114,7 +114,7 @@ button:hover
   }
 //postid.js
 .blog-text2{
-  color:#8f8f8f;
+  color:#273c75;
   margin:20px;
   padding:7px;
   text-align:justify;
@@ -134,6 +134,7 @@ button:hover
 //minimal size phone or tablet
 
 @media only screen and (max-width:700px){
+  
 .blog-sub button,.blog-text{
 display:none;
 }
