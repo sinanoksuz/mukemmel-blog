@@ -2,8 +2,8 @@ import css from 'styled-jsx/css'
 
 export default css.global`
 /*index.js */
-body{
-     background-image:url('/bgimg.png');
+body{  
+  background-image: linear-gradient(135deg,rgba(72,319,251,0.6),rgba(52,31,151,0.6));
     background-position: center;
     background-repeat: repeat-y;
     background-size: cover; 
@@ -19,7 +19,6 @@ body{
     margin: 0 auto;
     color:#273c75;
     padding:50px;
-    margin-bottom:50px;
     
   }
 
@@ -46,15 +45,7 @@ body{
     display:inline-block;
   }
 
-  .blog-left {
-    text-align: center;
-    float:left;
-    margin-left:5px;
-    border-right:1px solid #7f8c8d;
-    color: gray;
-    display:block;
-    
-}
+ 
 
   a {
     color: #273c75;
@@ -64,7 +55,8 @@ body{
   .blog-text{
     color#273c75;
     width: 60%;
-      
+    margin:0 auto;
+    margin-right:0;
     max-height:150px;
     padding:7px;
     overflow:hidden;
@@ -75,8 +67,16 @@ body{
 
 } 
 
+.blog-sub {
+  text-align:right;
+  margin:0 auto;
+
+}
+.blog-title{
+  text-align:center;
+}
 button{
-    background-color:#1abc9c;
+    background-color:#00b894;
     display:inline-block;
     margin-left:70px;
     margin-top:10px;
@@ -90,14 +90,27 @@ button{
 }
 button:hover
 {
-    background-color:#16a085;
+    background-color:#00cec9;
   }
   .img-cover{
+    margin-top:5%;
+    width:35%;  
+    margin:0 auto;
     float:left;
-    width:30%;
-    height:10%;
-    margin-bottom:38px;
-    
+    padding-bottom:10px;
+    height:30%;
+    margin-top:5%;
+    max-height:200px;
+  }
+  .blog-date{
+    clear:both;
+    border-top:0.5px solid black;
+    margin-top:5%;
+    display:block;
+    text-align:right;
+    color:black;
+    opacity:0.2;
+
   }
 //postid.js
 .blog-text2{
@@ -108,18 +121,38 @@ button:hover
   border-radius:10px;
   border: 1px solid #636e72;
 }
+.blog-date2{
+  clear:both;
+  border-bottom:0.5px solid black;
+  margin-top:5%;
+  display:block;
+  text-align:right;
+  color:black;
+  opacity:0.2;
+}
+
+//minimal size phone or tablet
+
 @media only screen and (max-width:700px){
-.blog-sub button,.blog-left,.blog-text{
+.blog-sub button,.blog-text{
 display:none;
 }
 .blog-title a{
   display:block;
-  position:static;
-  color:black;
-  border:1px solid red;
+  position:relative;
+  margin 0 auto;
+  text-align:center;
+  padding:5px;
+  border-top:1px solid rgba(0,0,0,0.2);
+  
+  
 }
 .img-cover{
+  
   width:100%;
+}
+.blog-date{
+  display:none;
 }
 }
 //comment and text area

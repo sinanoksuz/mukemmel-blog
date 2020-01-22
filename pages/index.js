@@ -9,7 +9,7 @@ import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 const Home = ({ posts }) => (
-  <body>
+
   <div className="container">
     <Head>
       <title>Home</title>
@@ -19,9 +19,7 @@ const Home = ({ posts }) => (
     <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
       <h1 className="hero-title">Sinan ÖKSÜZ</h1>
       <div className="hero-social-links">
-       <Link href="https://medium.com/@h.sinanoksuz">
-         <a className="social-link">Medium</a>
-        </Link>
+     
         <TwitterIcon style={{color:lightBlue[500]}}/> 
           <Link href="#">
           <a className="social-link">Twitter</a>
@@ -38,31 +36,28 @@ const Home = ({ posts }) => (
     </div>
 
     {posts.map(post => (
-      <div className="blog">
-     <img className="img-cover" src='/bgimg.png'/>
-     <div className="blog-sub">
+      <div className="blog"><img className="img-cover"  src={post.img}/>
+  
+     
         <h2 className="blog-title">
           <Link href={post.slug}>
             <a className="blog-title-link">{post.title}</a>
     </Link>
         </h2>
-        <div className="blog-left">
-        <div className="blog-date">{post.date} <span>&nbsp;{post.subject}</span></div>
-     
-         <div className="blog-subject"></div>
-        </div>
         <div className="blog-text">
        
           <ReactMarkdown source={post.details} />
           </div>
          <Link href={post.slug}><button>Read More</button></Link>
-         </div>
-        
+       
+         <div className="blog-date">Date:{post.date} <span>&nbsp;Subject:{post.subject}</span></div>
+   
       </div>
+      
     ))}
 
     <style jsx global>{globalStyles}</style>
-  </div></body>
+  </div>
 );
 
 Home.getInitialProps = async ({ req }) => {

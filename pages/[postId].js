@@ -10,7 +10,7 @@ import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import { TextareaAutosize } from "@material-ui/core";
-const BlogPost = ({ post }) => (
+const BlogPost = ({ post,comment }) => (
  <body  >
   <div className="container">
     <Head>
@@ -22,9 +22,7 @@ const BlogPost = ({ post }) => (
     <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
       <h1 className="hero-title">Sinan ÖKSÜZ</h1>
       <div className="hero-social-links">
-       <Link href="https://medium.com/@h.sinanoksuz">
-         <a className="social-link">Medium</a>
-        </Link>
+      
         <TwitterIcon style={{color:lightBlue[500]}}/> 
           <Link href="#">
           <a className="social-link">Twitter</a>
@@ -46,18 +44,17 @@ const BlogPost = ({ post }) => (
           <a className="blog-title-link">{post.title}</a>
         </Link>
       </h2>
-      <div className="blog-subject">{post.subject}</div>
-      <div className="blog-text2">
+       <div className="blog-text2">
         <ReactMarkdown source={post.details} />
       </div>
-      <div className="blog-date">{post.date}</div>
-     
+      <div className="blog-date2">Date:{post.date} &emsp; Subject:{post.subject}</div>
+       <h5>COMMENT:</h5>
       <div className="blog-comment">
-
-      <br/><div>Name:</div>
+  
+      <br/><div>Name:{comment.comments.id}</div>
       <br/>
       
-      <p className="comment"></p>
+      <p className="comment">{comment.comments.comment}</p>
       </div>
       <div className="blog-textarea">
 
@@ -79,7 +76,8 @@ BlogPost.getInitialProps = async ({ req, query }) => {
 //http://localhost:3000
   const res = await fetch(`http://localhost:3000/api/post/${query.postId}`);
   const json = await res.json();
-  return { post: json.post };
+  
+  return { post: json.post , comment:json.comment};
 };
 
 export default BlogPost;
