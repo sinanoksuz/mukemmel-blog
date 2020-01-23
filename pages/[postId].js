@@ -9,9 +9,16 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { TextareaAutosize } from "@material-ui/core";
+import FacebookIcon from '@material-ui/icons/Facebook';
+import MailIcon from '@material-ui/icons/Mail';
+import { TextField } from "@material-ui/core";
+
+function btnclck(e){
+
+  
+};
 const BlogPost = ({ post,comment }) => (
- <body  >
+
   <div className="container">
     <Head>
       <title>Home</title>
@@ -40,34 +47,51 @@ const BlogPost = ({ post,comment }) => (
 
     <div className="blog">
       <h2 className="blog-title">
-        <Link href="/test">
+        <Link href={post.slug}>
           <a className="blog-title-link">{post.title}</a>
         </Link>
       </h2>
        <div className="blog-text2">
-        <ReactMarkdown source={post.details} />
+        <ReactMarkdown source={post.details} /> 
+      <span className="sharetext">Share:</span><Link href="#">
+        <a className="social-share"> <MailIcon  style={{fontSize:[20]}}/>
+        </a>
+        </Link>
+        <Link href="#">
+        <a className="social-share"> <FacebookIcon  style={{fontSize:[20]}}/>
+        </a>
+        </Link>
+        <Link href="#">
+        <a className="social-share"> <TwitterIcon  style={{fontSize:[20]}}/>
+        </a>
+        </Link>
+        <Link href="#">
+        <a className="social-share"> <InstagramIcon  style={{fontSize:[20]}}/>
+        </a>
+        </Link>
+        <div className="blog-date2"> Date:{post.date} &emsp; Subject:{post.subject}</div>
       </div>
-      <div className="blog-date2">Date:{post.date} &emsp; Subject:{post.subject}</div>
-       <h5>COMMENT:</h5>
-      <div className="blog-comment">
-  
-      <br/><div>Name:{comment.comments.id}</div>
+     </div><h5>COMMENTS:</h5>
+   { comment.map(comment=>(
+    <div className="blog-comment">  
+    <div className="blog-comname"><span>{comment.id}&emsp;<span>{comment.date}</span></span></div>
+      <p className="blog-comparag">{comment.com}</p>
+      </div>
+   )) }
+   
+       <div className="blog-textarea">
+       Enter Comment:
+      <br/><div><TextField className="cm-input" placeholder="your name"></TextField></div>
       <br/>
       
-      <p className="comment">{comment.comments.comment}</p>
+      <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
+    <Link href={post.slug}><button className="cm-button"  onClick={btnclck}>Add Comment</button></Link>
       </div>
-      <div className="blog-textarea">
-
-      <br/><div>Name:</div>
-      <br/>
-      
-      <textarea className="textarea"></textarea>
-      </div>
-    </div>
+    
    <style jsx global>
    {globalStyles}
    </style>
-  </div></body>
+  </div>
 );
 
 BlogPost.getInitialProps = async ({ req, query }) => {
@@ -77,7 +101,7 @@ BlogPost.getInitialProps = async ({ req, query }) => {
   const res = await fetch(`http://localhost:3000/api/post/${query.postId}`);
   const json = await res.json();
   
-  return { post: json.post , comment:json.comment};
+  return { post: json.post , comment:json.comment.comments};
 };
 
 export default BlogPost;

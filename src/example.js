@@ -4,24 +4,51 @@ export const getPostss = () => {
     {
     slug: "yarisma",
     comments: 
-                {"id": "asd",
-                "comment": "İSMAİL YK"
+                [ {   id: "asd",
+                date:"17.01.2020 12:20",
+                com: "İSMAİL YK"
                 }
-            
+                ,{   id: "musa",
+                date:"17.01.2020 12:20",
+                com: "İSMAİL YK"
+                }
+                ,{   id: "sinan",
+                date:"17.01.2020 12:20",
+                com: "İSMAİL YK"
+                }]
     },
     {
     slug: "ornek-yazi",
-    comments: {
-                "id": "merve",
-                "comment": "Nasılsın"
-            }
+    comments: 
+    [ {   id: "asd",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }
+        ,{   id: "musa",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }
+        ,{   id: "sinan",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }]
+            
     },
     {
     slug: "merhaba",
-    comments: {
-                "id": "ali",
-                "comment": "Ben Çok İyiyim"
-            }
+    comments: [{   
+        id: "asd",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }
+        ,{   id: "musa",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }
+        ,{   id: "sinan",
+        date:"17.01.2020 12:20",
+        com: "İSMAİL YK"
+        }]
     }              
     ];
   };

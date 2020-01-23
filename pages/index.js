@@ -36,7 +36,8 @@ const Home = ({ posts }) => (
     </div>
 
     {posts.map(post => (
-      <div className="blog"><img className="img-cover"  src={post.img}/>
+      <div className="blog">
+      <img className="img-cover"  src={post.img}/>
   
       <div className="blog-sub">
         <h2 className="blog-title">
@@ -50,7 +51,8 @@ const Home = ({ posts }) => (
           </div>
          <Link href={post.slug}><button>Read More</button></Link>
          </div>
-         <div className="blog-date">Date:{post.date} <span>&nbsp;Subject:{post.subject}</span></div>
+         <div className="blog-date">Date:{post.date} <span>&nbsp;Subject:{post.subject}</span>
+         </div>
    
       </div>
       

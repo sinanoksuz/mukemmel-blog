@@ -109,9 +109,11 @@ button:hover
     display:block;
     text-align:right;
     color:black;
-    opacity:0.2;
+    opacity:0.4;
 
   }
+  
+
 //postid.js
 .blog-text2{
   color:#273c75;
@@ -121,14 +123,25 @@ button:hover
   border-radius:10px;
   border: 1px solid #636e72;
 }
+.social-share{
+  float:left;
+  color:#d63031;
+  display:inline-block;
+  }
+  .social-share:hover{
+    color:#fab1a0 ; 
+    }
 .blog-date2{
   clear:both;
-  border-bottom:0.5px solid black;
+  border-top:0.5px solid black;
   margin-top:5%;
   display:block;
   text-align:right;
   color:black;
   opacity:0.2;
+}
+.sharetext{
+  float:left;
 }
 
 //minimal size phone or tablet
@@ -152,8 +165,73 @@ display:none;
 .blog-date{
   display:none;
 }
+
+::placeholder{
+  color:red;
+  font-size:2vw;
+}
 }
 //comment and text area
+.blog-comment{
+  opacity:0.8;
+  margin-bottom:5%;
+}
+.blog-comname{
+  margin-bottom:1%;
+  margin-left:4%;
+}
+.blog-comparag{
+  margin:0 auto;
+  margin-left:20%;
+  padding:3%;
+	position: relative;
+	background: #fff;
+	border-radius: .4em;
+}
+.blog-comparag:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 14px solid transparent;
+	border-right-color: #fff;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -7.5px;
+	margin-left: -14px;
+}
+//comment text-area
+.blog-textarea{
+  display:block;
+  border:1px solid ;
+  border-radius:4px;
+  margin:10%;
+  text-align:left;
+  padding:1%;
+
+  padding-right:3%;
+  box-shadow: 5px 5px #b2bec3;
+}
+.cm-input{
+  width:20%;
+}
+::placeholder{
+  color:red;
+}
+.cm-button{
+  margin-top:4%;
+  float:right;
+}
+.cm-textarea{
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
+  display:block;
+  height:70px;
+}
+
 
   
 `
