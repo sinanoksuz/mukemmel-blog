@@ -13,7 +13,7 @@ const Home = ({ posts }) => (
   <div className="container">
     <Head>
       <title>Home</title>
-      <link rel="icon" href="/pencil.svg" />
+      <link rel="icon" href="/favori.ico" />
     </Head>
     <div className="hero">
     <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
