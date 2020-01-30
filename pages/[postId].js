@@ -75,7 +75,7 @@ const BlogPost = ({ post,comment }) => (
       <br/><div><TextField className="cm-input" placeholder="your name"></TextField></div>
       <br/>
       <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
-    <Link href={post.slug}><button className="cm-button"  onClick={btnclck}>Add Comment</button></Link>
+    <Link href={post.slug}><button className="cm-button" >Add Comment</button></Link>
       </div>
    <style jsx global>
    {globalStyles}
