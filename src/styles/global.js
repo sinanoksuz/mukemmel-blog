@@ -2,26 +2,32 @@ import css from 'styled-jsx/css'
 
 export default css.global`
 /*index.js */
+
+@font-face {
+  font-family:Cache;
+  src: url('../src/styles/fonts/Cache-Pressed.ttf') format(truetype);
+}
 body{  
-  background-image: linear-gradient(335deg,rgba(236,240,241,0.6),rgba(26,188,156,0.6));
+    background-image: linear-gradient(335deg,rgba(236,240,241,0.6),rgba(26,188,156,0.6));
     background-position: center;
     background-repeat: repeat-y;
+    font-family:Cache;
     background-size: cover; 
     margin:0 auto;
     height:100%;
     
 }
-
+h1{
+  cursor:pointer;
+}
 .container {
     max-width: 70%;
     width: 100%;
     background-color:rgba(236,240,241,0.4);
     margin: 0 auto;
     color:#273c75;
-    padding:50px;
-    
+    padding:50px; 
   }
-
   .hero {
     color:black;
     text-align: center;
@@ -31,22 +37,16 @@ body{
     height:40px;
     margin-right:10px;
     border-radius:25px;
-
   }
-
   .social-link {
     margin-right: 8px;
     vertical-align:top;
   }
-
   .hero-title {
     font-size: 48px;
     vertical-align:center;
     display:inline-block;
   }
-
- 
-
   a {
     color: #273c75;
     margin-left:10px;
@@ -64,13 +64,10 @@ body{
     text-align:justify;
     border-radius:10px;
     border: 1px solid #636e72;
-
 } 
-
 .blog-sub {
   text-align:right;
   margin:0 auto;
-
 }
 .blog-title{
   text-align:center;
@@ -90,7 +87,7 @@ button{
 }
 button:hover
 {
-    background-color:#00cec9;
+      background-color:#00cec9;
   }
   .img-cover{
     margin-top:5%;
@@ -110,10 +107,7 @@ button:hover
     text-align:right;
     color:black;
     opacity:0.4;
-
   }
-  
-
 //postid.js
 .blog-text2{
   color:#273c75;
@@ -130,7 +124,7 @@ button:hover
   }
   .social-share:hover{
     color:#fab1a0 ; 
-    }
+  }
 .blog-date2{
   clear:both;
   border-top:0.5px solid black;
@@ -143,11 +137,8 @@ button:hover
 .sharetext{
   float:left;
 }
-
 //minimal size phone or tablet
-
 @media only screen and (max-width:700px){
-  
 .blog-sub button,.blog-text{
 display:none;
 }
@@ -165,7 +156,6 @@ display:none;
 .blog-date{
   display:none;
 }
-
 ::placeholder{
   color:red;
   font-size:2vw;

@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import globalStyles from '../src/styles/global.js';
-
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { lightBlue,} from "@material-ui/core/colors";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -13,23 +12,17 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
 import { TextField } from "@material-ui/core";
 
-function btnclck(e){
 
-  
-};
 const BlogPost = ({ post,comment }) => (
-
   <div className="container">
     <Head>
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
     <div className="hero">
     <img className="hero-img" src="https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"></img>
-      <h1 className="hero-title">Sinan ÖKSÜZ</h1>
+    <Link href=".."><h1 className="hero-title">Sinan ÖKSÜZ</h1></Link>  
       <div className="hero-social-links">
-      
         <TwitterIcon style={{color:lightBlue[500]}}/> 
           <Link href="#">
           <a className="social-link">Twitter</a>
@@ -44,7 +37,6 @@ const BlogPost = ({ post,comment }) => (
         </Link>
       </div>
     </div>
-
     <div className="blog">
       <h2 className="blog-title">
         <Link href={post.slug}>
@@ -78,29 +70,25 @@ const BlogPost = ({ post,comment }) => (
       <p className="blog-comparag">{comment.com}</p>
       </div>
    )) }
-   
-       <div className="blog-textarea">
+    <div className="blog-textarea">
        Enter Comment:
       <br/><div><TextField className="cm-input" placeholder="your name"></TextField></div>
       <br/>
-      
       <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
     <Link href={post.slug}><button className="cm-button"  onClick={btnclck}>Add Comment</button></Link>
       </div>
-    
    <style jsx global>
    {globalStyles}
    </style>
-  </div>
+   </div>
 );
-
 BlogPost.getInitialProps = async ({ req, query }) => {
   // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
 //  http://mukemmel-blogg.herokuapp.com/
 //http://localhost:3000
-  const res = await fetch(`http://localhost:3000/api/post/${query.postId}`);
+  const res = await fetch(`http://mukemmel-blogg.herokuapp.com/api/post/${query.postId}`);
   const json = await res.json();
-  
+
   return { post: json.post , comment:json.comment.comments};
 };
 
