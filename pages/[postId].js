@@ -12,7 +12,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
 import  Commentpage  from "./Comment";
 import { TextField } from "@material-ui/core";
-
+import Router from 'next/router';
 const BlogPost = ({ post,comment }) => (
   <div className="container">
     <Head>
@@ -76,13 +76,22 @@ const BlogPost = ({ post,comment }) => (
 <TextField className="cm-input" placeholder="your name"></TextField>
  <br/><br/>
  <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
- <Link href="#"><button  className="cm-button">Add Comment</button></Link>
+ <Linkb href={post.slug}></Linkb>
 </div> 
    <style jsx global>
    {globalStyles}
    </style>
    </div>
 );
+function onClickHandler(slug,ctext,cname){
+  return e=>{
+    Router.push(slug)
+  }
+}
+const Linkb=({children,href})=>(
+  <button  className="cm-button" onClick={onClickHandler(href)}>
+  Add Comment</button>
+)
 BlogPost.getInitialProps = async ({ req, query }) => {
   // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin
 //  http://sinan-blog06.herokuapp.com/
