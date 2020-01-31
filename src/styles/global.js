@@ -216,7 +216,8 @@ display:none;
   float:right;
 }
 .cm-textarea{
-  width:100%;
+  width:99%;
+  max-width:99%;
   border-radius:10px;
   overflow:hidden;
   display:block;
