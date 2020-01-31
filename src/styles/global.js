@@ -206,6 +206,7 @@ display:none;
 }
 .cm-input{
   width:20%;
+  margin-bottom:10px;
 }
 ::placeholder{
   color:red;

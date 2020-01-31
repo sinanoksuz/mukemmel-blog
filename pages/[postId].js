@@ -10,11 +10,9 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailIcon from '@material-ui/icons/Mail';
+import  Commentpage  from "./Comment";
 import { TextField } from "@material-ui/core";
-import {setPostss} from "../src/example";
 
-
-}
 const BlogPost = ({ post,comment }) => (
   <div className="container">
     <Head>
@@ -72,13 +70,14 @@ const BlogPost = ({ post,comment }) => (
       <p className="blog-comparag">{comment.com}</p>
       </div>
    )) }
-    <div className="blog-textarea">
-       Enter Comment:
-      <br/><div><TextField className="cm-input" placeholder="your name"></TextField></div>
-      <br/>
-      <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
-    <Link href={post.slug}><button className="cm-button" >Add Comment</button></Link>
-      </div>
+<div className="blog-textarea">
+ Enter Comment:
+ <br/>
+<TextField className="cm-input" placeholder="your name"></TextField>
+ <br/><br/>
+ <textarea wrap="off" className="cm-textarea" placeholder="please enter comment"></textarea>
+ <Link href="#"><button  className="cm-button">Add Comment</button></Link>
+</div> 
    <style jsx global>
    {globalStyles}
    </style>

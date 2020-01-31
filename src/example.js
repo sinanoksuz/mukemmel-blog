@@ -4,7 +4,7 @@ export const getPostss = () => {
         {
         slug: "yarisma",
         comments: 
-                    [ {   id: "asd",
+                    [ {   is: "asd",
                     date:"17.01.2020 12:20",
                     com: "İSMAİL YK"
                     }
